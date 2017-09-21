@@ -110,17 +110,17 @@ function initial() {
 
     } else {
         $("#trivia").html("<p class='question'>" + guess.pickQuestion[i].question + "</p>");
-        $("#trivia").append("<p class='question'>" + guess.pickQuestion[i].a1 + "</p>");
-        $("#trivia").append("<p class='question'>" + guess.pickQuestion[i].a2 + "</p>");
-        $("#trivia").append("<p class='question'>" + guess.pickQuestion[i].a3 + "</p>");
-        $("#trivia").append("<p class='question'>" + guess.pickQuestion[i].a4 + "</p>");
+        $("#trivia").append("<p class='choice'>" + guess.pickQuestion[i].a1 + "</p><br>");
+        $("#trivia").append("<p class='choice'>" + guess.pickQuestion[i].a2 + "</p><br>");
+        $("#trivia").append("<p class='choice'>" + guess.pickQuestion[i].a3 + "</p><br>");
+        $("#trivia").append("<p class='choice'>" + guess.pickQuestion[i].a4 + "</p><br>");
     }
 
 }
 
 function next() {
     initial();
-    $(".question").on("click", function() {
+    $(".choice").on("click", function() {
         var picked = ($(this).text());
         console.log(picked);
 
@@ -153,7 +153,7 @@ $("#trivia").on("click", "#start", function() {
 
     initial();
 
-    $(".question").on("click", function() {
+    $(".choice").on("click", function() {
         var picked = ($(this).text());
         console.log(picked);
 

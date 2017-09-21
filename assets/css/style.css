@@ -1,0 +1,41 @@
+h1{
+	font-size: 64px;
+	text-align: center;
+	color: lightgreen;
+}
+
+body {
+	background: url("../images/background.png");
+}
+
+#head {
+	background: green;
+	margin: 10%;
+	padding: 5%;
+}
+
+.question,
+#start,
+#time {
+	font-size: 32px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.choice:hover {
+	background-color: lightblue;
+
+}
+
+.choice {
+	font-size: 24px;
+	display: inline-block;
+}
+
+#trivia {
+	text-align: center;
+}
+
+#time{
+	color: darkred;
+}
