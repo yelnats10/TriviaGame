@@ -8,9 +8,13 @@ body {
 	background: url("../images/background.png");
 }
 
+img {
+	width: 500px;
+}
+
 #head {
 	background: green;
-	margin: 10%;
+	margin: 5% 10%;
 	padding: 5%;
 }
 

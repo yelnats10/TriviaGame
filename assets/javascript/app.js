@@ -57,6 +57,7 @@ var number = 30;
 var countDown;
 var wins = 0;
 var loses = 0;
+var images = ["assets/images/chef.gif", "assets/images/clock.gif", "assets/images/match.gif", "assets/images/month.gif", "assets/images/apple.gif"];
 
 function decrement() {
     number--;
@@ -68,6 +69,7 @@ function decrement() {
         $("#trivia").html("<p class='question'>Wrong!</p>");
         $("#trivia").append("<p class='question'>Correct answer is</p>");
         $("#trivia").append("<p class='question'>" + guess.pickQuestion[i].answer + "</p>");
+        $("#trivia").append("<img src='assets/images/wrong.gif'>");
         i++;
         setTimeout(next, 5000);
 
@@ -109,6 +111,7 @@ function initial() {
         setTimeout(reset, 5000);
 
     } else {
+        $("#time").html("<h2>Time Remaining: 30</h2>");
         $("#trivia").html("<p class='question'>" + guess.pickQuestion[i].question + "</p>");
         $("#trivia").append("<p class='choice'>" + guess.pickQuestion[i].a1 + "</p><br>");
         $("#trivia").append("<p class='choice'>" + guess.pickQuestion[i].a2 + "</p><br>");
@@ -129,6 +132,7 @@ function next() {
             stop();
 
             $("#trivia").html("<p class='question'>Correct!</p>");
+            $("#trivia").append("<img src='" + images[i] + "'>");
             i++;
             wins++;
             setTimeout(next, 5000);
@@ -140,6 +144,7 @@ function next() {
             $("#trivia").html("<p class='question'>Wrong!</p>");
             $("#trivia").append("<p class='question'>Correct answer is</p>");
             $("#trivia").append("<p class='question'>" + guess.pickQuestion[i].answer + "</p>");
+            $("#trivia").append("<img src='assets/images/wrong.gif'>");
             i++;
             loses++;
             setTimeout(next, 5000);
@@ -162,6 +167,7 @@ $("#trivia").on("click", "#start", function() {
             stop();
 
             $("#trivia").html("<p class='question'>Correct!</p>");
+            $("#trivia").append("<img src='" + images[i] + "'>");
             i++;
             wins++;
             setTimeout(next, 5000);
@@ -172,6 +178,7 @@ $("#trivia").on("click", "#start", function() {
             $("#trivia").html("<p class='question'>Wrong!</p>");
             $("#trivia").append("<p class='question'>Correct answer is</p>");
             $("#trivia").append("<p class='question'>" + guess.pickQuestion[i].answer + "</p>");
+            $("#trivia").append("<img src='assets/images/wrong.gif'>");
             i++;
             loses++;
             setTimeout(next, 5000);
